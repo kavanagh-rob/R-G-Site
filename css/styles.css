@@ -26,6 +26,10 @@
   padding: .9rem 0;
 }
 
+#mainNav .navbar-nav .nav-item {
+  font-size: 1.3rem;
+}
+
 #mainNav .navbar-nav .nav-item:hover {
   color: fade(white, 80%);
   outline: none;
@@ -47,12 +51,12 @@
   }
   #mainNav .navbar-brand {
     padding: .5rem 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.9);
   }
   #mainNav .nav-link:hover {
     color: rgba(255, 255, 255, 0.75);
@@ -90,7 +94,7 @@
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  padding-bottom: 50px;
+  padding-bottom: 3rem;
   background: linear-gradient(to bottom, rgba(238, 72, 218, 0.119608) 0%, rgba(22, 22, 22, 0.1) 75%, #161616 100%), url("../img/back.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -110,7 +114,7 @@
 
 .masthead h2 {
   max-width: 20rem;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -131,7 +135,7 @@
   }
   .masthead h2 {
     max-width: 30rem;
-    font-size: 1.25rem;
+    font-size: 3.25rem;
   }
 }
 
@@ -163,7 +167,8 @@
 }
 
 .ceremony-section {
-  padding-top: 10rem;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
   background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
 }
 
@@ -264,6 +269,90 @@
 
 .contact-section .social a:active {
   color: #fff;
+}
+
+@font-face {
+  font-family: Lato-Regular;
+  src: url("../fonts/Lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: Lato-Hairline;
+  src: url("../fonts/Lato/Lato-Hairline.ttf");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Italic;
+  src: url("../fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf");
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ L-Text >= 26 ]*/
+.l1-txt1 {
+  font-family: Lato-Hairline;
+  font-size: 72px;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.l1-txt2 {
+  font-family: PlayfairDisplay-Italic;
+  font-size: 90px;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ M-Text 16 - 25 ]*/
+.m1-txt1 {
+  font-family: Lato-Regular;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.m1-txt2 {
+  font-family: PlayfairDisplay-Italic;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1;
+}
+
+.p-b-37 {
+  padding-bottom: 37px;
+}
+
+.p-r-20 {
+  padding-right: 20px;
+}
+
+.m-b-30 {
+  margin-bottom: 30px;
+}
+
+.flex-w,
+.flex-c,
+.dis-flex {
+  display: flex;
+}
+
+.flex-c {
+  justify-content: center;
+}
+
+.flex-col-c {
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.flex-col-c,
+.flex-col {
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
 }
 
 body {

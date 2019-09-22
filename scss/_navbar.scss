@@ -17,6 +17,7 @@
   }
   .navbar-nav {
     .nav-item {
+      font-size: 1.3rem;
       &:hover {
         color: fade(white, 80%);
         outline: none;
@@ -37,12 +38,12 @@
     transition: background-color 0.3s ease-in-out;
     .navbar-brand {
       padding: .5rem 0;
-      color: fade-out($white, .5);
+      color: fade-out($white, .1);
     }
     .nav-link {
       transition: none;
       padding: 2rem 1.5rem;
-      color: fade-out($white, .5);
+      color: fade-out($white, .1);
       &:hover {
         color: fade-out($white, .25);
       }
