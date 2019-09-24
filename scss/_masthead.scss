@@ -4,14 +4,14 @@
   width: 100%;
   height: auto;
   min-height: 35rem;
-  padding: 15rem 0;
-  padding-bottom: 3rem;
+  padding: 20rem 0;
+  padding-bottom: 0.5rem;
   background: linear-gradient(to bottom, #{fade-out(#ee48da38, .1)} 0%,#{fade-out($black, .9)} 75%,#161616 100%), url('../img/back.png');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  h1 {
+  .title-text {
     font-family: 'Varela Round';
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -25,14 +25,15 @@
     font-size: 2rem;
   }
   @media(min-width: 768px) {
-    h1 {
+    padding-bottom: 3rem;
+    .title-text {
       font-size: 4rem;
       line-height: 4rem;
     }
   }
   @media(min-width: 992px) {
     height: 100vh;
-    h1 {
+    .title-text {
       font-size: 6.5rem;
       line-height: 6.5rem;
       letter-spacing: 0.8rem;

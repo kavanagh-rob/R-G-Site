@@ -1,8 +1,50 @@
 .ceremony-section {
-  padding-top: 4rem;
-  padding-bottom: 5rem;
-  background: linear-gradient(to bottom, $black 0%,#{fade-out($black, .1)} 75%,#{fade-out($black, .2)} 100%);
-  p {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    background: linear-gradient(to bottom, $black 0%,#{fade-out($black, .1)} 75%,#{fade-out($black, .2)} 100%);
+    
+    .container {
+      max-width: 1260px;
+    }
+
+    p {
+      margin-bottom: 5rem;
+    }
+
+  .church-img {
+    background: linear-gradient(to bottom, #{fade-out(#ee48da38, .1)} 0%,#{fade-out($black, .9)} 75%,#161616 100%), url('../img/church.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    min-height: 22rem;;
+  }
+
+  .map-container {
+    min-height: 22rem;
+  }
+
+  .church-container,
+  .map-container {
     margin-bottom: 5rem;
   }
+
+  @media(max-width: 1024px) {
+     padding-top: 1.5rem; 
+
+    .map-container, 
+    .church-img {
+      min-height: 18rem;
+    }
+
+  }
+
+  @media(max-width: 768px) { 
+    padding-top: 1rem; 
+
+    .map-container, 
+    .church-img {
+      min-height: 13rem;
+    }
+  }
 }
+

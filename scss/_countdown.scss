@@ -14,31 +14,12 @@
   }
 
 
-/*//////////////////////////////////////////////////////////////////
-[ L-Text >= 26 ]*/
-.l1-txt1 {
-  font-family: Lato-Hairline;
-  font-size: 72px;
-  line-height: 1.1;
-  color: #fff;
-  text-transform: uppercase;
-}
 
 .l1-txt2 {
   font-family: PlayfairDisplay-Italic;
   font-size: 90px;
   line-height: 1;
   color: #fff;
-  text-transform: uppercase;
-}
-
-  /*//////////////////////////////////////////////////////////////////
-[ M-Text 16 - 25 ]*/
-.m1-txt1 {
-  font-family: Lato-Regular;
-  font-size: 18px;
-  color: #555;
-  line-height: 1.2;
   text-transform: uppercase;
 }
 
@@ -49,15 +30,57 @@
   line-height: 1;
 }
 
-
 .p-b-37 {padding-bottom: 37px;}
 
 .p-r-20 {padding-right: 20px;}
 
 .m-b-30 {margin-bottom: 30px;}
 
+@media(max-width:  992px) {
+
+  .l1-txt2 {
+    font-size: 50px;
+  }
+ .m1-txt2 {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 768px) {
+
+  .l1-txt2 {
+    font-size: 38px;
+  }
+ .m1-txt2 {
+    font-size: 18px;
+  }
+
+.p-b-37 {padding-bottom: 17px;}
+
+.p-r-20 {padding-right: 20px;}
+
+.m-b-30 {margin-bottom: 30px;}
+}
+
+@media(max-width: 468px) {
+
+  .l1-txt2 {
+    font-size: 32px;
+  }
+ .m1-txt2 {
+    font-size: 14px;
+  }
+  
+}
+
+
+
+
+
+
 .flex-w,
 .flex-c,
+.flex-col-c,
 .dis-flex {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -83,3 +106,4 @@
 	-o-flex-direction: column;
 	flex-direction: column;
 }
+
