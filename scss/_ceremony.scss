@@ -1,6 +1,6 @@
 .ceremony-section {
     padding-top: 4rem;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
     background: linear-gradient(to bottom, $black 0%,#{fade-out($black, .1)} 75%,#{fade-out($black, .2)} 100%);
     
     .container {
@@ -30,16 +30,19 @@
 
   @media(max-width: 1024px) {
      padding-top: 1.5rem; 
-
+     padding-bottom: 1.5rem;
     .map-container, 
     .church-img {
       min-height: 18rem;
     }
 
+    
+
   }
 
   @media(max-width: 768px) { 
     padding-top: 1rem; 
+    padding-bottom: 1.5rem;
 
     .map-container, 
     .church-img {
