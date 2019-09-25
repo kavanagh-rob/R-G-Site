@@ -353,20 +353,124 @@
   <!-- RSVP Section -->
   <section id="rsvp" class="rsvp-section">
     <div class="container">
-      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5">RSVP to our Wedding</h2>
+          <form class="form-horizontal">
+              <fieldset>
+                           
+                <!-- Text input-->
+                <div class="row form-group">
+                  <label class="col-md-5 text-white control-label" for="nameInput">Who are you?</label>  
+                  <div class="col-md-7">
+                    <input id="nameInput" name="nameInput" type="text" placeholder="Enter your name" class="form-control input-md" required="">
+                  </div>
+                </div>
+                
+                <!-- Multiple Radios (inline) -->
+                <div class="row form-group">
+                  <label class="col-md-5 text-white control-label" for="Name">Will you be attending?</label>
+                  <div class="col-md-7"> 
+                    <div class="row"> 
+                      <label class="col-6 col-md-6 radio-inline" for="Name-0">
+                        <span class="text-white">Yes</span>
+                        <input type="radio" name="Name" id="Name-0" value="Yes" checked="checked">
+                      </label>
+                      <label class="col-6 col-md-6 radio-inline" for="Name-1">
+                        <span class="text-white">No</span>
+                        <input type="radio" name="Name" id="Name-1" value="No">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="Guest">Are you bringing a guest?</label>
+                    <div class="col-md-7"> 
+                      <div class="row"> 
+                        <label class="col-6 col-md-6 radio-inline" for="Guest-0">
+                          <span class="text-white">Yes</span>
+                          <input type="radio" name="Guest" id="Guest-0" value="Yes" checked="checked">
+                        </label>
+                        <label class="col-6  col-md-6 radio-inline" for="Guest-1">
+                          <span class="text-white">No</span>
+                          <input type="radio" name="Guest" id="Guest-1" value="No">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                <div class="row form-group">
+                  <label class="col-md-5 text-white control-label" for="nameInput">Name of guest</label>  
+                  <div class="col-md-7">
+                    <input id="nameInput" name="nameInput" type="text" placeholder="Enter guests name" class="form-control input-md" required="">
+                  </div>
+                </div>
+
+                 <!-- Multiple Radios (inline) -->
+                <div class="row form-group">
+                  <label class="col-md-5 text-white control-label" for="Day2">Will you make Day 2?</label>
+                  <div class="col-md-7"> 
+                    <div class="row"> 
+                      <label class="col-6 col-md-6 radio-inline" for="Day2-0">
+                        <span class="text-white">Yes hopefully</span>
+                        <input type="radio" name="Day2" id="Day2-0" value="Yes" checked="checked">
+                      </label>
+                      <label class="col-6 col-md-6 radio-inline" for="Day2-1">
+                        <span class="text-white">Unfortunately I can't</span>
+                        <input type="radio" name="Day2" id="Day2-1" value="No">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Textarea -->
+                <div class="row form-group">
+                  <label class="col-md-5 text-white control-label" for="commentText">Comments for us</label>
+                  <div class="col-md-7">                     
+                      <textarea class="form-control" id="commentText" name="commentText">Anything else you would like us to know?</textarea>
+                  </div>
+                </div>
+                
+                <!-- Button -->
+                <div class="form-group">
+                    <div class="col-md-12">
+                      <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+                    </div>
+                </div>
+              </fieldset>
+              </form>
+          </div>
+        </div>
+
+    <!-- <div class="container">
+      <div >
         <div class="col-md-10 col-lg-8 mx-auto text-center">
 
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">RSVP to our Wedding</h2>
 
           <form class="form-inline d-flex">
-            <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-            <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+            <div class="row">
+              <label class="col-md-4 text-white mb-5">Name</label>
+              <input type="text" class="col-md-8 form-control " id="inputName" placeholder="Enter Your Name">
+            </div>
+            <div class="row">
+                <label class="col-md-8 text-white mb-5">Will you be attending?</label>
+                <input type="checkbox" class="col-md-2 form-control text-white mb-5" name="isAttending" value="yes">Yes<br>
+                <input type="checkbox" class="col-md-2 form-control text-white mb-5" name="isAttending" value="No">No<br>
+            </div>
+          <!-- <input type="text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="input" placeholder="Your Name">
+          <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
+          <textarea name="message" rows="10" cols="30">
+              Messages for Gean & Rob
+              </textarea> -->
+            <!-- <button type="submit" class="btn btn-primary mx-auto">Submit</button> -->
           </form>
 
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <!-- Contact Section -->
