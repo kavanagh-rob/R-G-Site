@@ -356,7 +356,7 @@
         <div class="col-md-10 col-lg-8 mx-auto text-center">
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">RSVP to our Wedding</h2>
-          <form class="form-horizontal">
+          <form id="rsvpForm" class="form-horizontal">
               <fieldset>
                            
                 <!-- Text input-->
@@ -369,16 +369,16 @@
                 
                 <!-- Multiple Radios (inline) -->
                 <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="Name">Will you be attending?</label>
+                  <label class="col-md-5 text-white control-label" for="Attending">Will you be attending?</label>
                   <div class="col-md-7"> 
                     <div class="row"> 
-                      <label class="col-6 col-md-6 radio-inline" for="Name-0">
+                      <label class="col-6 col-md-6 radio-inline" for="Attending-0">
                         <span class="text-white">Yes</span>
-                        <input type="radio" name="Name" id="Name-0" value="Yes" checked="checked">
+                        <input type="radio" name="Attending" id="Attending-0" value="Yes" checked="checked">
                       </label>
-                      <label class="col-6 col-md-6 radio-inline" for="Name-1">
+                      <label class="col-6 col-md-6 radio-inline" for="Attending-1">
                         <span class="text-white">No</span>
-                        <input type="radio" name="Name" id="Name-1" value="No">
+                        <input type="radio" name="Attending" id="Attending-1" value="No">
                       </label>
                     </div>
                   </div>
@@ -401,9 +401,9 @@
                   </div>
                   
                 <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="nameInput">Name of guest</label>  
+                  <label class="col-md-5 text-white control-label" for="guestNameInput">Name of guest</label>  
                   <div class="col-md-7">
-                    <input id="nameInput" name="nameInput" type="text" placeholder="Enter guests name" class="form-control input-md" required="">
+                    <input id="guestNameInput" name="guestNameInput" type="text" placeholder="Enter guests name" class="form-control input-md" required="">
                   </div>
                 </div>
 
@@ -413,11 +413,11 @@
                   <div class="col-md-7"> 
                     <div class="row"> 
                       <label class="col-6 col-md-6 radio-inline" for="Day2-0">
-                        <span class="text-white">Yes hopefully</span>
+                        <span class="text-white">Yes</span>
                         <input type="radio" name="Day2" id="Day2-0" value="Yes" checked="checked">
                       </label>
                       <label class="col-6 col-md-6 radio-inline" for="Day2-1">
-                        <span class="text-white">Unfortunately I can't</span>
+                        <span class="text-white">No</span>
                         <input type="radio" name="Day2" id="Day2-1" value="No">
                       </label>
                     </div>

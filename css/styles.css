@@ -254,7 +254,7 @@
 }
 
 .rsvp-section {
-  padding: 10rem 0;
+  padding: 5rem 0;
   background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/night.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -271,6 +271,18 @@
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0;
+}
+
+@media (max-width: 1024px) {
+  .rsvp-section {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .rsvp-section {
+    padding-top: 1rem;
+  }
 }
 
 .contact-section {
