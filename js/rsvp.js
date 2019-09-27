@@ -31,15 +31,16 @@
 })(jQuery); 
 
 
-function signin(email, password, onSuccess, onFailure) {
-    var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-        Username: email,
-        Password: password
-    });
-
-    var cognitoUser = createCognitoUser(email);
-    cognitoUser.authenticateUser(authenticationDetails, {
-        onSuccess: onSuccess,
-        onFailure: onFailure
+function sendRSVP(name, isAttending, hasGuest, guestName, day2, comment, onSuccess, onFailure) {
+    $.ajax({
+        url: "example.php",
+        data: fd,
+        cache: false,
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function (dataofconfirm) {
+            // do something with the result
+        }
     });
 }
