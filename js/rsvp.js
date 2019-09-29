@@ -4,23 +4,25 @@
     });
 
     function handleRSVP(event) {
-        var name = $('#nameInput').val();
-        var isAttending = $('input[name="Attending"]:checked').value;
-        var hasGuest = $('input[name="Guest"]:checked').value;
-        var guestName = $('#guestNameInput').val();
-        var day2 = $('input[name="Day2"]:checked').value;
-        var comment = $('#commentText').val();
+        var rsvpData = {};
+        rsvpData.name = $('#nameInput').val() ? $('#nameInput').val() : "N/A";
+        rsvpData.email = $('#emailInput').val() ? $('#emailInput').val() : "N/A";
+        rsvpData.isAttending = $('input[name="Attending"]:checked').val();
+        rsvpData.hasGuest = $('input[name="Guest"]:checked').val();
+        rsvpData.guestName =  $('#guestNameInput').val() ? $('#guestNameInput').val() : "N/A";
+        rsvpData.day2 = $('input[name="Day2"]:checked').val()
+        rsvpData.comment = $('#commentText').val() ? $('#commentText').val() : "N/A";
         event.preventDefault();
        
-        sendRSVP(name, isAttending, hasGuest, guestName, day2, comment,
+        sendRSVP(rsvpData,
             function rsvpSuccess() {
-                alert("Thanks " + name + " your RSVP has been submitted.\n\n" 
-                + "• name: "+name+"\n" 
-                + "• Attending: "+isAttending+"\n"  
-                + "• Do I have a guest: "+hasGuest+"\n"  
-                + "• Name of Guest: "+guestName+"\n"  
-                + "• Can I make day 2: "+day2+"\n\n"  
-                + "• Comment: "+comment+"\n\n"  
+                alert("Thanks " + rsvpData.name + " your RSVP has been submitted.\n\n" 
+                + "• Name: "+rsvpData.name+"\n" 
+                + "• Attending: "+rsvpData.isAttending+"\n"  
+                + "• Guest: "+rsvpData.hasGuest+"\n"  
+                + "• Name of Guest: "+rsvpData.guestName+"\n"  
+                + "• Can I make day 2: "+rsvpData.day2+"\n\n"  
+                + "• Comment: "+rsvpData.comment+"\n\n"  
                  );
             },
             function rsvpError(err) {
@@ -31,16 +33,22 @@
 })(jQuery); 
 
 
-function sendRSVP(name, isAttending, hasGuest, guestName, day2, comment, onSuccess, onFailure) {
+function sendRSVP(rsvpData, onSuccess, onFailure) {
+    var data = {};
+    data.rsvpData = rsvpData;
+    data.rsvpData.source = "website-test";
     $.ajax({
-        url: "example.php",
-        data: fd,
+        url: "https://37xim6z6ic.execute-api.eu-west-1.amazonaws.com/live/rsvp",
+        data: JSON.stringify(data),
         cache: false,
         processData: false,
         contentType: false,
         type: 'POST',
-        success: function (dataofconfirm) {
-            // do something with the result
+        success: function (successData) {
+            onSuccess();
+        },
+        error: function (errorData) {
+            onFailure();
         }
     });
 }

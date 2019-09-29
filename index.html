@@ -34,6 +34,7 @@
   <meta name="msapplication-TileColor" content="#b91d47">
   <meta name="msapplication-config" content="img/icons/browserconfig.xml">
   <meta name="theme-color" content="#0054ba">
+  <script src="js/modernizr.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -507,6 +508,23 @@
 
   <!-- RSVP Section -->
   <section id="rsvp" class="rsvp-section">
+      <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
     <div class="container">
         <div class="col-md-10 col-lg-8 mx-auto text-center">
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
@@ -518,9 +536,17 @@
                 <div class="row form-group">
                   <label class="col-md-5 text-white control-label" for="nameInput">Who are you?</label>  
                   <div class="col-md-7">
-                    <input id="nameInput" name="nameInput" type="text" placeholder="Enter your name" class="form-control input-md" required="">
+                    <input id="nameInput" name="nameInput" type="text" placeholder="Enter your name" class="form-control input-md" required>
                   </div>
                 </div>
+
+                <!-- Email input-->
+                <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="emailInput">Whats you email?</label>  
+                    <div class="col-md-7">
+                      <input id="emailInput" name="emailInput" type="email" placeholder="Enter your email" class="form-control input-md" required>
+                    </div>
+                  </div>
                 
                 <!-- Multiple Radios (inline) -->
                 <div class="row form-group">
@@ -558,7 +584,7 @@
                 <div class="row form-group">
                   <label class="col-md-5 text-white control-label" for="guestNameInput">Name of guest</label>  
                   <div class="col-md-7">
-                    <input id="guestNameInput" name="guestNameInput" type="text" placeholder="Enter guests name" class="form-control input-md" required="">
+                    <input id="guestNameInput" name="guestNameInput" type="text" placeholder="Enter guests name" class="form-control input-md">
                   </div>
                 </div>
 
@@ -583,7 +609,7 @@
                 <div class="row form-group">
                   <label class="col-md-5 text-white control-label" for="commentText">Comments for us</label>
                   <div class="col-md-7">                     
-                      <textarea class="form-control" id="commentText" name="commentText">Anything else you would like us to know?</textarea>
+                      <textarea class="form-control" placeholder="Anything else you would like us to know?" id="commentText" name="commentText"></textarea>
                   </div>
                 </div>
                 
@@ -601,7 +627,7 @@
 
         </div>
       </div>
-    </div> -->
+    </div> 
   </section>
 
   <!-- Contact Section -->
@@ -647,14 +673,17 @@
       </div>
 
       <div class="social d-flex justify-content-center">
-        <a href="#" class="mx-2">
-          <i class="fab fa-twitter"></i>
+          <a href="/message-board" class="mx-2">
+            <i class="fas fa-comments"></i>
+          </a>
+          <a href="/picture-board" class="mx-2">
+            <i class="fas fa-camera-retro"></i>
+          </a>
+          <a href="https://www.breaffyhouseresort.com/" class="mx-2">
+          <i class="fas fa-hotel"></i>
         </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-github"></i>
+        <a href="#ceremony" class="mx-2">
+          <i class="fas fa-church"></i>
         </a>
       </div>
 
@@ -689,6 +718,8 @@
   <script src="js/pwa-install.min.js"></script>
 
   <script src="vendor/jquery/jquery.min.js"></script>
+
+  <script src="js/rsvp.min.js"></script> 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -701,9 +732,9 @@
   <script src="js/countdown.min.js"></script>
 
   <!-- Polaroid Scripts -->
-  <script src="js/modernizr.min.js"></script>
   <script src="js/classie.min.js"></script>
   <script src="js/photostack.min.js"></script> 
+  
   <script>
     new Photostack( document.getElementById( 'polaroid-gallery' ), {
       callback : function( item ) {
