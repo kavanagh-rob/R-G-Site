@@ -16,6 +16,7 @@
        
         sendRSVP(rsvpData,
             function rsvpSuccess() {
+                document.getElementById("rsvp-overlay").setAttribute("class","rsvp-overlay");
                 alert("Thanks " + rsvpData.name + " your RSVP has been submitted.\n\n" 
                 + "• Name: "+rsvpData.name+"\n" 
                 + "• Attending: "+rsvpData.isAttending+"\n"  

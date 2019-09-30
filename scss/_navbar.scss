@@ -1,5 +1,19 @@
 #mainNav {
 
+  @media(max-width: 400px) { 
+    .btn {
+      font-size: 60%; 
+    }
+    .navbar-brand {
+      font-size: 1rem;
+      margin-right:0;
+    }
+    #installedText {
+      font-size: 0.75rem;
+    }
+
+  }
+
   .btn-info {
     padding:.375rem .75rem;
   }
@@ -9,7 +23,7 @@
     font-size: 80%;
     padding: 0.75rem;
     color: $primary;
-    border: 1px solid $primary;
+    border: 2px solid $primary;
     &:focus {
       outline: none;
     }

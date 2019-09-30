@@ -45,7 +45,7 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Our Wedding</a>
       <div id="installedText" >(App Installed)</div>
       <button id="installButton" class="btn btn-info" hidden>
-          Install As App
+          Install
         </button>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
@@ -508,126 +508,106 @@
 
   <!-- RSVP Section -->
   <section id="rsvp" class="rsvp-section">
-      <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
-              </div>
-              <div class="modal-body">
-                <p>One fine body&hellip;</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    <div class="container">
-        <div class="col-md-10 col-lg-8 mx-auto text-center">
-          <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-          <h2 class="text-white mb-5">RSVP to our Wedding</h2>
-          <form id="rsvpForm" class="form-horizontal">
-              <fieldset>
-                           
-                <!-- Text input-->
-                <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="nameInput">Who are you?</label>  
-                  <div class="col-md-7">
-                    <input id="nameInput" name="nameInput" type="text" placeholder="Enter your name" class="form-control input-md" required>
-                  </div>
-                </div>
-
-                <!-- Email input-->
-                <div class="row form-group">
-                    <label class="col-md-5 text-white control-label" for="emailInput">Whats you email?</label>  
+    <div id="rsvp-overlay">
+      <div class="container">
+          <div class="col-md-10 col-lg-8 mx-auto text-center">
+            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+            <h2 class="text-white mb-5">RSVP to our Wedding</h2>
+            <form id="rsvpForm" class="form-horizontal">
+                <fieldset>
+                            
+                  <!-- Text input-->
+                  <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="nameInput">Who are you?</label>  
                     <div class="col-md-7">
-                      <input id="emailInput" name="emailInput" type="email" placeholder="Enter your email" class="form-control input-md" required>
+                      <input id="nameInput" name="nameInput" type="text" placeholder="Enter your name" class="form-control input-md" required>
                     </div>
                   </div>
-                
-                <!-- Multiple Radios (inline) -->
-                <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="Attending">Will you be attending?</label>
-                  <div class="col-md-7"> 
-                    <div class="row"> 
-                      <label class="col-6 col-md-6 radio-inline" for="Attending-0">
-                        <span class="text-white">Yes</span>
-                        <input type="radio" name="Attending" id="Attending-0" value="Yes" checked="checked">
-                      </label>
-                      <label class="col-6 col-md-6 radio-inline" for="Attending-1">
-                        <span class="text-white">No</span>
-                        <input type="radio" name="Attending" id="Attending-1" value="No">
-                      </label>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="row form-group">
-                    <label class="col-md-5 text-white control-label" for="Guest">Are you bringing a guest?</label>
+                  <!-- Email input-->
+                  <div class="row form-group">
+                      <label class="col-md-5 text-white control-label" for="emailInput">Whats you email?</label>  
+                      <div class="col-md-7">
+                        <input id="emailInput" name="emailInput" type="email" placeholder="Enter your email" class="form-control input-md" required>
+                      </div>
+                    </div>
+                  
+                  <!-- Multiple Radios (inline) -->
+                  <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="Attending">Will you be attending?</label>
                     <div class="col-md-7"> 
                       <div class="row"> 
-                        <label class="col-6 col-md-6 radio-inline" for="Guest-0">
+                        <label class="col-6 col-md-6 radio-inline" for="Attending-0">
                           <span class="text-white">Yes</span>
-                          <input type="radio" name="Guest" id="Guest-0" value="Yes" checked="checked">
+                          <input type="radio" name="Attending" id="Attending-0" value="Yes" checked="checked">
                         </label>
-                        <label class="col-6  col-md-6 radio-inline" for="Guest-1">
+                        <label class="col-6 col-md-6 radio-inline" for="Attending-1">
                           <span class="text-white">No</span>
-                          <input type="radio" name="Guest" id="Guest-1" value="No">
+                          <input type="radio" name="Attending" id="Attending-1" value="No">
                         </label>
                       </div>
                     </div>
                   </div>
+
+                  <div class="row form-group">
+                      <label class="col-md-5 text-white control-label" for="Guest">Are you bringing a guest?</label>
+                      <div class="col-md-7"> 
+                        <div class="row"> 
+                          <label class="col-6 col-md-6 radio-inline" for="Guest-0">
+                            <span class="text-white">Yes</span>
+                            <input type="radio" name="Guest" id="Guest-0" value="Yes" checked="checked">
+                          </label>
+                          <label class="col-6  col-md-6 radio-inline" for="Guest-1">
+                            <span class="text-white">No</span>
+                            <input type="radio" name="Guest" id="Guest-1" value="No">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="guestNameInput">Name of guest</label>  
+                    <div class="col-md-7">
+                      <input id="guestNameInput" name="guestNameInput" type="text" placeholder="Enter guests name" class="form-control input-md">
+                    </div>
+                  </div>
+
+                  <!-- Multiple Radios (inline) -->
+                  <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="Day2">Will you make Day 2?</label>
+                    <div class="col-md-7"> 
+                      <div class="row"> 
+                        <label class="col-6 col-md-6 radio-inline" for="Day2-0">
+                          <span class="text-white">Yes</span>
+                          <input type="radio" name="Day2" id="Day2-0" value="Yes" checked="checked">
+                        </label>
+                        <label class="col-6 col-md-6 radio-inline" for="Day2-1">
+                          <span class="text-white">No</span>
+                          <input type="radio" name="Day2" id="Day2-1" value="No">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Textarea -->
+                  <div class="row form-group">
+                    <label class="col-md-5 text-white control-label" for="commentText">Comments for us</label>
+                    <div class="col-md-7">                     
+                        <textarea class="form-control" placeholder="Anything else you would like us to know?" id="commentText" name="commentText"></textarea>
+                    </div>
+                  </div>
                   
-                <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="guestNameInput">Name of guest</label>  
-                  <div class="col-md-7">
-                    <input id="guestNameInput" name="guestNameInput" type="text" placeholder="Enter guests name" class="form-control input-md">
+                  <!-- Button -->
+                  <div class="form-group">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary mx-auto">Submit</button>
+                      </div>
                   </div>
-                </div>
-
-                 <!-- Multiple Radios (inline) -->
-                <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="Day2">Will you make Day 2?</label>
-                  <div class="col-md-7"> 
-                    <div class="row"> 
-                      <label class="col-6 col-md-6 radio-inline" for="Day2-0">
-                        <span class="text-white">Yes</span>
-                        <input type="radio" name="Day2" id="Day2-0" value="Yes" checked="checked">
-                      </label>
-                      <label class="col-6 col-md-6 radio-inline" for="Day2-1">
-                        <span class="text-white">No</span>
-                        <input type="radio" name="Day2" id="Day2-1" value="No">
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Textarea -->
-                <div class="row form-group">
-                  <label class="col-md-5 text-white control-label" for="commentText">Comments for us</label>
-                  <div class="col-md-7">                     
-                      <textarea class="form-control" placeholder="Anything else you would like us to know?" id="commentText" name="commentText"></textarea>
-                  </div>
-                </div>
-                
-                <!-- Button -->
-                <div class="form-group">
-                    <div class="col-md-12">
-                      <button type="submit" class="btn btn-primary mx-auto">Submit</button>
-                    </div>
-                </div>
-              </fieldset>
-              </form>
-          </div>
-        </div>
-          </form>
-
-        </div>
+                </fieldset>
+                </form>
+            </div>
       </div>
-    </div> 
+    </div>
   </section>
 
   <!-- Contact Section -->

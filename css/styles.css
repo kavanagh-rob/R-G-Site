@@ -10,6 +10,19 @@
   background-color: #fff;
 }
 
+@media (max-width: 400px) {
+  #mainNav .btn {
+    font-size: 60%;
+  }
+  #mainNav .navbar-brand {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+  #mainNav #installedText {
+    font-size: 0.75rem;
+  }
+}
+
 #mainNav .btn-info {
   padding: .375rem .75rem;
 }
@@ -18,7 +31,7 @@
   font-size: 80%;
   padding: 0.75rem;
   color: #64a19d;
-  border: 1px solid #64a19d;
+  border: 2px solid #64a19d;
 }
 
 #mainNav .navbar-toggler:focus {
@@ -259,12 +272,16 @@
 }
 
 .rsvp-section {
-  padding: 5rem 0;
   background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/night.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  /* Overlay */
+}
+
+.rsvp-section .container {
+  padding: 5rem 0;
 }
 
 .rsvp-section .form-inline input {
@@ -288,6 +305,56 @@
   .rsvp-section {
     padding-top: 1rem;
   }
+}
+
+.rsvp-section .rsvp-overlay {
+  position: relative;
+}
+
+.rsvp-section .rsvp-overlay::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(231, 9, 21, 0.7);
+  left: 0;
+  z-index: 100;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.rsvp-section .rsvp-overlay::before {
+  transition: opacity 0.3s;
+}
+
+.rsvp-section .rsvp-overlay::after {
+  content: 'Yor RSVP has been sent';
+  font-weight: 400;
+  position: absolute;
+  border: 3px solid #fff;
+  text-align: center;
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 10px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.rsvp-section .rsvp-overlay::before,
+.rsvp-section .rsvp-overlay::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.rsvp-section .rsvp-overlay::before,
+.rsvp-section .rsvp-overlay:hover::after,
+.rsvp-section .touch .rsvp-overlay::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .contact-section {

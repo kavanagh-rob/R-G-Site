@@ -7,11 +7,7 @@ installButton.addEventListener('click', installPWA);
 
 function installPWA(evt) {
   deferredInstallPrompt.prompt();
-  // Set teh install button as already installed
-  evt.srcElement.setAttribute("class", "app-installed");
   evt.srcElement.setAttribute('hidden', true);
-
-
 }
 
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
