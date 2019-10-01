@@ -1,11 +1,30 @@
    .polaroid-gallery {
       margin-top: 3rem;
       margin-bottom: 7rem;
+      
+    .polaroid-title-container {
+      padding-top: 4rem;
+    }
 
-      .polaroid-title-container {
-        padding-top: 4rem;
-      }
+    #leftNav,
+    #rightNav {
+      font-size: 2rem;
+      color: #2f2e2ef2;
+      cursor: pointer;
+      background: rgba(57, 52, 52, 0.25);
+      border-radius: 100%;
+      padding: .8rem;
+    }
 
+    #leftNav {
+      float: left;
+      margin-left: 5%;
+    }
+    
+    #rightNav {
+      float: right;
+      margin-right: 5%;
+    }
     .camera-img {
       background: url('/img/camera.png');
       width: 10rem;
@@ -31,6 +50,7 @@
    }
 
     .wood-container {
+      position: relative;
       background: url(/img/wood-background.jpg);
     }
     
@@ -119,7 +139,7 @@
     .photostack nav {
       position: absolute;
       width: 100%;
-      bottom: 30px;
+      bottom: 50%;
       z-index: 90;
       text-align: center;
       left: 0;

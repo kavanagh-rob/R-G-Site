@@ -112,13 +112,14 @@
 		// add nav dots
 		this.nav = document.createElement( 'nav' )
 		var inner = '';
-		for( var i = 0; i < this.itemsCount; ++i ) {
-			inner += '<span></span>';
-		}
+		// for( var i = 0; i < this.itemsCount; ++i ) {
+		// 	inner += '<span></span>';
+		// }
+		inner = '<div class="social"><i id="leftNav" class="fas fa-arrow-left"></i><i id="rightNav" class="fas fa-arrow-right"></i></div>';
 		this.nav.innerHTML = inner;
 		this.el.appendChild( this.nav );
-		this.navDots = [].slice.call( this.nav.children );
 	}
+
 
 	Photostack.prototype._initEvents = function() {
 		var self = this,
@@ -140,6 +141,7 @@
 				}
 				self.started = true; 
 				self._showPhoto( self.current );
+				self.startAutoPlay();
 			};
 
 		if( beforeStep ) {
@@ -150,24 +152,65 @@
 			open();
 		}
 
-		this.navDots.forEach( function( dot, idx ) {
-			dot.addEventListener( 'click', function() {
-				// rotate the photo if clicking on the current dot
-				if( idx === self.current ) {
-					self._rotateItem();
+		// this.navDots.forEach( function( dot, idx ) {
+		// 	dot.addEventListener( 'click', function() {
+		// 		// rotate the photo if clicking on the current dot
+		// 		if( idx === self.current ) {
+		// 			self._rotateItem();
+		// 		}
+		// 		else {
+		// 			// if the photo is flipped then rotate it back before shuffling again
+		// 			var callback = function() { self._showPhoto( idx ); }
+		// 			if( self.flipped ) {
+		// 				self._rotateItem( callback );
+		// 			}
+		// 			else {
+		// 				callback();
+		// 			}
+		// 		}
+		// 	} );
+		// } );
+
+		document.getElementById('leftNav').addEventListener( 'click', function() {
+			self.setPreviousPhotoIndex();
+				var callback = function() { self._showPhoto( self.current); }
+				if( self.flipped ) {
+					self._rotateItem( callback );
 				}
 				else {
-					// if the photo is flipped then rotate it back before shuffling again
-					var callback = function() { self._showPhoto( idx ); }
-					if( self.flipped ) {
-						self._rotateItem( callback );
-					}
-					else {
-						callback();
-					}
+					callback();
 				}
-			} );
 		} );
+
+		document.getElementById('rightNav').addEventListener( 'click', function() {
+			self.setNextPhotoIndex();
+				var callback = function() { self._showPhoto( self.current); }
+				if( self.flipped ) {
+					self._rotateItem( callback );
+				}
+				else {
+					callback();
+				}
+		} );
+
+		Photostack.prototype.setNextPhotoIndex = function() {
+			this.items = [].slice.call( this.inner.querySelectorAll( 'figure:not([data-dummy])' ) );
+			self.current = self.current < this.items.length -1 ? self.current + 1 : 0;
+		};
+
+		Photostack.prototype.setPreviousPhotoIndex = function (){
+			this.items = [].slice.call( this.inner.querySelectorAll( 'figure:not([data-dummy])' ) );
+			self.current = self.current > 0 ? self.current - 1  : this.items.length-1;
+		}
+
+		Photostack.prototype.startAutoPlay = function() {
+			setInterval(function(){
+				self.setNextPhotoIndex();
+				self._showPhoto( self.current); 
+				}, 4000);
+		};
+
+		
 
 		window.addEventListener( 'resize', function() { self._resizeHandler(); } );
 	}
@@ -204,21 +247,21 @@
 		// if there is something behind..
 		if( classie.hasClass( this.currentItem, 'photostack-flip' ) ) {
 			this._removeItemPerspective();
-			classie.removeClass( this.navDots[ this.current ], 'flippable' );
+			// classie.removeClass( this.navDots[ this.current ], 'flippable' );
 		}
 
-		classie.removeClass( this.navDots[ this.current ], 'current' );
+		// classie.removeClass( this.navDots[ this.current ], 'current' );
 		classie.removeClass( this.currentItem, 'photostack-current' );
 		
 		// change current
 		this.current = pos;
 		this.currentItem = this.items[ this.current ];
 		
-		classie.addClass( this.navDots[ this.current ], 'current' );
+		// classie.addClass( this.navDots[ this.current ], 'current' );
 		// if there is something behind..
 		if( this.currentItem.querySelector( '.photostack-back' ) ) {
 			// nav dot gets class flippable
-			classie.addClass( this.navDots[ pos ], 'flippable' );
+			// classie.addClass( this.navDots[ pos ], 'flippable' );
 		}
 
 		// shuffle a bit
@@ -411,7 +454,7 @@
 				};
 
 			if( this.flipped ) {
-				classie.removeClass( this.navDots[ this.current ], 'flip' );
+				// classie.removeClass( this.navDots[ this.current ], 'flip' );
 				if( support.preserve3d ) {
 					this.currentItem.style.WebkitTransform = 'translate(' + this.centerItem.x + 'px,' + this.centerItem.y + 'px) rotateY(0deg)';
 					this.currentItem.style.transform = 'translate(' + this.centerItem.x + 'px,' + this.centerItem.y + 'px) rotateY(0deg)';
@@ -421,7 +464,7 @@
 				}
 			}
 			else {
-				classie.addClass( this.navDots[ this.current ], 'flip' );
+				// classie.addClass( this.navDots[ this.current ], 'flip' );
 				if( support.preserve3d ) {
 					this.currentItem.style.WebkitTransform = 'translate(' + this.centerItem.x + 'px,' + this.centerItem.y + 'px) translate(' + this.sizes.item.width + 'px) rotateY(-179.9deg)';
 					this.currentItem.style.transform = 'translate(' + this.centerItem.x + 'px,' + this.centerItem.y + 'px) translate(' + this.sizes.item.width + 'px) rotateY(-179.9deg)';
