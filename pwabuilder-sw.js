@@ -44,6 +44,9 @@ function fromCache(request) {
 }
 
 function updateCache(request, response) {
+  // if(!(event.request.url.indexOf('http') === 0)){
+  //   return;
+  // }
   return caches.open(CACHE).then(function (cache) {
     return cache.put(request, response);
   });

@@ -109,15 +109,16 @@
 	}
 
 	Photostack.prototype._addNavigation = function() {
-		// add nav dots
-		this.nav = document.createElement( 'nav' )
-		var inner = '';
-		// for( var i = 0; i < this.itemsCount; ++i ) {
-		// 	inner += '<span></span>';
-		// }
-		inner = '<div class="social"><i id="leftNav" class="fas fa-arrow-left"></i><i id="rightNav" class="fas fa-arrow-right"></i></div>';
-		this.nav.innerHTML = inner;
-		this.el.appendChild( this.nav );
+		this.div1 = document.createElement( 'div' );
+		classie.addClass( this.div1, 'leftNavDiv' ); 
+		this.div2 = document.createElement( 'div' );
+		classie.addClass( this.div2, 'rightNavDiv' ); 
+		var inner1 = '<i id="leftNav" class="fas fa-arrow-left"></i>';
+		var inner2 = '<i id="rightNav" class="fas fa-arrow-right"></i>';
+		this.div1.innerHTML = inner1;
+		this.div2.innerHTML = inner2;
+		this.el.appendChild( this.div1 );
+		this.el.appendChild( this.div2 );
 	}
 
 
@@ -152,46 +153,27 @@
 			open();
 		}
 
-		// this.navDots.forEach( function( dot, idx ) {
-		// 	dot.addEventListener( 'click', function() {
-		// 		// rotate the photo if clicking on the current dot
-		// 		if( idx === self.current ) {
-		// 			self._rotateItem();
-		// 		}
-		// 		else {
-		// 			// if the photo is flipped then rotate it back before shuffling again
-		// 			var callback = function() { self._showPhoto( idx ); }
-		// 			if( self.flipped ) {
-		// 				self._rotateItem( callback );
-		// 			}
-		// 			else {
-		// 				callback();
-		// 			}
-		// 		}
-		// 	} );
-		// } );
-
+		var interval;
 		document.getElementById('leftNav').addEventListener( 'click', function() {
+			clearInterval(self.interval);
 			self.setPreviousPhotoIndex();
-				var callback = function() { self._showPhoto( self.current); }
-				if( self.flipped ) {
-					self._rotateItem( callback );
-				}
-				else {
-					callback();
-				}
+			self._showPhoto( self.current);
+			self.startAutoPlay();
 		} );
 
 		document.getElementById('rightNav').addEventListener( 'click', function() {
+			clearInterval(self.interval);
 			self.setNextPhotoIndex();
-				var callback = function() { self._showPhoto( self.current); }
-				if( self.flipped ) {
-					self._rotateItem( callback );
-				}
-				else {
-					callback();
-				}
+			self._showPhoto( self.current);
+			self.startAutoPlay();
 		} );
+
+		Photostack.prototype.rotatePolaroid = function() {
+			clearInterval(self.interval);
+			self._rotateItem();
+			self.startAutoPlay();
+		}
+		
 
 		Photostack.prototype.setNextPhotoIndex = function() {
 			this.items = [].slice.call( this.inner.querySelectorAll( 'figure:not([data-dummy])' ) );
@@ -204,13 +186,13 @@
 		}
 
 		Photostack.prototype.startAutoPlay = function() {
-			setInterval(function(){
+			clearInterval(self.interval);
+			self.interval = setInterval(function(){
 				self.setNextPhotoIndex();
 				self._showPhoto( self.current); 
-				}, 4000);
+				}, 7000);
 		};
 
-		
 
 		window.addEventListener( 'resize', function() { self._resizeHandler(); } );
 	}
@@ -244,26 +226,16 @@
 		}
 		this.isShuffling = true;
 
-		// if there is something behind..
 		if( classie.hasClass( this.currentItem, 'photostack-flip' ) ) {
 			this._removeItemPerspective();
-			// classie.removeClass( this.navDots[ this.current ], 'flippable' );
 		}
 
-		// classie.removeClass( this.navDots[ this.current ], 'current' );
 		classie.removeClass( this.currentItem, 'photostack-current' );
 		
 		// change current
 		this.current = pos;
 		this.currentItem = this.items[ this.current ];
 		
-		// classie.addClass( this.navDots[ this.current ], 'current' );
-		// if there is something behind..
-		if( this.currentItem.querySelector( '.photostack-back' ) ) {
-			// nav dot gets class flippable
-			// classie.addClass( this.navDots[ pos ], 'flippable' );
-		}
-
 		// shuffle a bit
 		this._shuffle();
 	}
@@ -438,6 +410,7 @@
 		classie.removeClass( this.el, 'photostack-perspective' );
 		classie.removeClass( this.currentItem, 'photostack-flip' );
 	}
+	
 
 	Photostack.prototype._rotateItem = function( callback ) {
 		if( classie.hasClass( this.el, 'photostack-perspective' ) && !this.isRotating && !this.isShuffling ) {
@@ -483,8 +456,9 @@
 			}
 		}
 	}
-
+	
 	// add to global namespace
 	window.Photostack = Photostack;
+
 
 })( window );
