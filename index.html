@@ -60,14 +60,17 @@
             <a class="nav-link js-scroll-trigger" href="#reception">Reception</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#accomodation">Accomodation</a>
+            <a class="nav-link js-scroll-trigger" href="#accomodation">Accom</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#gallery">Gallery</a>
+              <a class="nav-link js-scroll-trigger" href="#gallery">Snaps</a>
             </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#rsvp">RSVP</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#interact">Interact</a>
+            </li>
         </ul>
       </div>
     </div>
@@ -82,7 +85,8 @@
           <span class="title-text mx-auto my-0 text-uppercase"> & </span>
           <span class="title-text mx-auto my-0 text-uppercase">Rob</span>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">5th June 2020</h2>
-          <a href="#rsvp" class="btn btn-primary js-scroll-trigger">RSVP Now</a>
+          <a href="https://interact.geanandrob.com" class="btn btn-danger mast-button mr-4">Snap Zone</a>
+          <a href="#rsvp" id="rsvpMastHeadButton" class="btn btn-primary mast-button js-scroll-trigger">RSVP Now</a>
         </div>
       </div>
     </div>
@@ -175,17 +179,23 @@
   <section id="accomodation" class="accomodation-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-lg-8 mx-auto text-center">
-              <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-              <h2 class="text-black mb-5">Accomodation Options</h2>
-              <ol>
-                  <li> <p class="mb-0 text-black-50">Breaffy House</p></li>
-                  <li> <p class="mb-0 text-black-50">Breaffy Woods</p></li>
-                  <li> <p class="mb-0 text-black-50">B & B</p></li>
-              </ol>
+          <div class="col-md-10 col-lg-8 mx-auto">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-hotel text-primary accomodation-icon mb-2"></i>
+                <h4 class="text-uppercase m-0">Accomodation</h4>
+                <hr class="my-4">
+                <div class="small text-black-50">
+                  <ol>
+                      <li> <p class="mb-0 text-black-50">Breaffy House</p></li>
+                      <li> <p class="mb-0 text-black-50">Breaffy Woods</p></li>
+                      <li> <p class="mb-0 text-black-50">B & B</p></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
    <!-- Gallery Section -->
@@ -495,7 +505,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact-section bg-black">
+  <section id="interact" class="contact-section bg-black">
     <div class="container">
 
       <div class="row">
@@ -503,10 +513,12 @@
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="card py-4 h-100">
             <div class="card-body text-center">
-              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Hotel</h4>
+              <h4 class="text-uppercase m-0">Upload and Share Pics</h4>
               <hr class="my-4">
-              <div class="small text-black-50">Castlebar</div>
+              <a href="https://interact.geanandrob.com/snap" id="snapZoneButton" class="btn btn-danger">
+                <i class="fas fa-camera-retro zone-button"></i>
+                <span>  Snap Zone</span>
+              </a>       
             </div>
           </div>
         </div>
@@ -514,12 +526,12 @@
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="card py-4 h-100">
             <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
+              <h4 class="text-uppercase m-0">Comment and Discussion Board</h4>
               <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="#">robandgean@gmail.com</a>
-              </div>
+              <a href="https://interact.geanandrob.com/chat" id="chatZoneButton" class="btn btn-primary">
+                <i class="fas fa-comments zone-button"></i>
+                <span>  Chat Zone</span>
+              </a>    
             </div>
           </div>
         </div>
@@ -527,10 +539,12 @@
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="card py-4 h-100">
             <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Phone</h4>
+              <h4 class="text-uppercase m-0">Email robandgean@gmail.com</h4>
               <hr class="my-4">
-              <div class="small text-black-50"> 0879752354</div>
+              <a href="mailto:robandgean@gmail.com" class="btn btn-success">
+                <i class="fas fa-envelope zone-button"></i>
+                <span>  Email Us</span>
+              </a>    
             </div>
           </div>
         </div>
@@ -581,6 +595,8 @@
   <!-- service work install script -->
   <script src="js/pwa-install.min.js"></script>
 
+  <script src="js/clickdata.min.js"></script>
+
   <script src="vendor/jquery/jquery.min.js"></script>
 
   <script src="js/rsvp.min.js"></script> 
@@ -597,6 +613,8 @@
   <!-- Polaroid Scripts -->
   <script src="js/classie.min.js"></script>
   <script src="js/photostack.min.js"></script> 
+
+ 
   
   <script>
     var polaroidGal = new Photostack( document.getElementById( 'polaroid-gallery' ), {

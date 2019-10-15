@@ -135,6 +135,41 @@
   font-size: 2rem;
 }
 
+.masthead .mast-button {
+  font-size: 60%;
+  padding: .5rem 1rem;
+}
+
+@media (min-width: 400px) {
+  .masthead {
+    background: linear-gradient(to bottom, rgba(238, 72, 218, 0.119608) 0%, rgba(22, 22, 22, 0.1) 75%, #161616 100%), url("../img/background-tablet.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: auto;
+  }
+  .masthead .mast-button {
+    font-size: 70%;
+    padding: .85rem 1.5rem;
+  }
+}
+
+@media (min-width: 568px) {
+  .masthead {
+    background: linear-gradient(to bottom, rgba(238, 72, 218, 0.119608) 0%, rgba(22, 22, 22, 0.1) 75%, #161616 100%), url("../img/background-tablet.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: auto;
+  }
+  .masthead .mast-button {
+    font-size: 80%;
+    padding: 1.5rem 2rem;
+  }
+}
+
 @media (min-width: 768px) {
   .masthead {
     padding-bottom: 3rem;
@@ -367,6 +402,14 @@
   padding: 5rem 0 0;
 }
 
+.contact-section .btn {
+  font-size: 120%;
+}
+
+.contact-section .zone-button {
+  color: black;
+}
+
 .contact-section .card {
   border: 0;
   border-bottom: 0.25rem solid #64a19d;
@@ -506,158 +549,6 @@
   -moz-flex-direction: column;
   -o-flex-direction: column;
   flex-direction: column;
-}
-
-.gallery-section {
-  /*jssor slider loading skin spin css*/
-  /*jssor slider arrow skin 106 css*/
-  /*jssor slider thumbnail skin 101 css*/
-}
-
-.gallery-section .gallery-container {
-  margin-bottom: 3rem;
-}
-
-.gallery-section .jssorl-009-spin img {
-  -webkit-animation-name: jssorl-009-spin;
-  animation-name: jssorl-009-spin;
-  -webkit-animation-duration: 1.6s;
-  animation-duration: 1.6s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-@-webkit-keyframes jssorl-009-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes jssorl-009-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.gallery-section .jssora106 {
-  display: block;
-  position: absolute;
-  cursor: pointer;
-}
-
-.gallery-section .jssora106 .c {
-  fill: #fff;
-  opacity: .3;
-}
-
-.gallery-section .jssora106 .a {
-  fill: none;
-  stroke: #000;
-  stroke-width: 350;
-  stroke-miterlimit: 10;
-}
-
-.gallery-section .jssora106:hover .c {
-  opacity: .5;
-}
-
-.gallery-section .jssora106:hover .a {
-  opacity: .8;
-}
-
-.gallery-section .jssora106.jssora106dn .c {
-  opacity: .2;
-}
-
-.gallery-section .jssora106.jssora106dn .a {
-  opacity: 1;
-}
-
-.gallery-section .jssora106.jssora106ds {
-  opacity: .3;
-  pointer-events: none;
-}
-
-.gallery-section .jssort101 .p {
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  background: #000;
-}
-
-.gallery-section .jssort101 .p .cv {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #000;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-.gallery-section .jssort101 .a {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 400;
-  stroke-miterlimit: 10;
-  visibility: hidden;
-}
-
-.gallery-section .jssort101 .p:hover .cv, .gallery-section .jssort101 .p.pdn .cv {
-  border: none;
-  border-color: transparent;
-}
-
-.gallery-section .jssort101 .p:hover {
-  padding: 2px;
-}
-
-.gallery-section .jssort101 .p:hover .cv {
-  background-color: black;
-  opacity: .35;
-}
-
-.gallery-section .jssort101 .p:hover.pdn {
-  padding: 0;
-}
-
-.gallery-section .jssort101 .p:hover.pdn .cv {
-  border: 2px solid #fff;
-  background: none;
-  opacity: .35;
-}
-
-.gallery-section .jssort101 .pav .cv {
-  border-color: #fff;
-  opacity: .35;
-}
-
-.gallery-section .jssort101 .pav .a, .gallery-section .jssort101 .p:hover .a {
-  visibility: visible;
-}
-
-.gallery-section .jssort101 .t {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  opacity: .6;
-}
-
-.gallery-section .jssort101 .pav .t, .gallery-section .jssort101 .p:hover .t {
-  opacity: 1;
 }
 
 .polaroid-gallery {
@@ -1270,6 +1161,10 @@ svg.polaroid rect {
     font-size: 160%;
     line-height: 2;
   }
+}
+
+.accomodation-section .accomodation-icon {
+  font-size: 180%;
 }
 
 body {

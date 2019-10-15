@@ -1,5 +1,11 @@
 .contact-section {
   padding: 5rem 0 0;
+  .btn {
+    font-size: 120%;
+  }
+  .zone-button {
+    color: black;
+  }
   .card {
     border: 0;
     border-bottom: 0.25rem solid $primary;
