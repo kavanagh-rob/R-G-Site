@@ -190,7 +190,7 @@
 			self.interval = setInterval(function(){
 				self.setNextPhotoIndex();
 				self._showPhoto( self.current); 
-				}, 7000);
+				}, 5000);
 		};
 
 

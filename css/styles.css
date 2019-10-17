@@ -1167,6 +1167,24 @@ svg.polaroid rect {
   font-size: 180%;
 }
 
+.accomodation-section .accom-body-text {
+  margin-left: 2rem;
+  color: black;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.accomodation-section .accom-header-text {
+  color: darkblue;
+  font-weight: 600;
+}
+
+.accomodation-section .accom-ol {
+  color: darkblue;
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+
 body {
   font-family: 'Nunito';
   letter-spacing: 0.0625em;
