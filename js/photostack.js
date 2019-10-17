@@ -135,6 +135,7 @@
 					this.removeEventListener( 'click', open ); 
 					classie.removeClass( self.el, 'photostack-start' );
 					setTransition();
+					postPolaroidAnalytics('View Gallery');
 				}
 				else {
 					self.openDefault = true;
@@ -462,3 +463,35 @@
 
 
 })( window );
+
+function postPolaroidAnalytics(elementClicked) {
+	console.log("pol");
+    try {
+        var data = getAnalyticsData(elementClicked);
+        data.analyticsData.type = 'gallery-'+elementClicked;
+        $.ajax({
+            url: "https://37xim6z6ic.execute-api.eu-west-1.amazonaws.com/live/analytics",
+            data: JSON.stringify(data),
+            cache: false,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function (successData) {
+            },
+            error: function (errorData) {
+            }
+        });
+      } catch(err) {
+    }
+  }
+
+  function getAnalyticsData(elementClicked){
+    var data = {};
+    data.analyticsData = {};
+    data.analyticsData.elementClicked = elementClicked;
+
+    if(window.navigator) {
+        data.analyticsData.platform = data.analyticsData.platform ? data.analyticsData.platform : 'N/A';
+    }
+    return data;
+  }

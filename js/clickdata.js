@@ -5,6 +5,10 @@
         postAnalytics('rsvpButtonMast');
     });
 
+    document.getElementById('snapMastHeadButton').addEventListener( 'click', function() {
+        postAnalytics('snapMastHeadButton');
+    });
+
     document.getElementById('chatZoneButton').addEventListener( 'click', function() {
         postAnalytics('chatzone');
     });
@@ -12,6 +16,8 @@
     document.getElementById('snapZoneButton').addEventListener( 'click', function() {
         postAnalytics('snapzone');
     });
+
+    
 
 })( window );
 
