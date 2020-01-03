@@ -12,6 +12,7 @@
         rsvpData.guestName =  $('#guestNameInput').val() ? $('#guestNameInput').val() : "N/A";
         rsvpData.day2 = $('input[name="Day2"]:checked').val()
         rsvpData.comment = $('#commentText').val() ? $('#commentText').val() : "N/A";
+        rsvpData.songChoice = $('#songChoiceText').val() ? $('#songChoiceText').val() : "N/A";
         event.preventDefault();
        
         sendRSVP(rsvpData,
@@ -23,6 +24,7 @@
                 + "• Guest: "+rsvpData.hasGuest+"\n"  
                 + "• Name of Guest: "+rsvpData.guestName+"\n"  
                 + "• Can I make day 2: "+rsvpData.day2+"\n\n"  
+                + "• Song: "+rsvpData.songChoice+"\n\n"  
                 + "• Comment: "+rsvpData.comment+"\n\n"  
                  );
             },

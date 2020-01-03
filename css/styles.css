@@ -312,6 +312,43 @@
   }
 }
 
+.day2-section {
+  background-color: #0761bd4d;
+  padding: 3rem 0;
+  color: darkslategrey;
+}
+
+.day2-section .featured-text {
+  padding: 2rem;
+}
+
+@media (min-width: 992px) {
+  .day2-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid #64a19d;
+  }
+}
+
+.day2-section .text-day2info {
+  color: black !important;
+}
+
+.day2-section .day2-text {
+  padding: 3rem;
+  font-size: 90%;
+}
+
+@media (min-width: 992px) {
+  .day2-section .day2-text {
+    padding: 5rem;
+  }
+  .day2-section .day2-text hr {
+    border-color: #64a19d;
+    border-width: .25rem;
+    width: 30%;
+  }
+}
+
 .rsvp-section {
   background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/night.jpg");
   background-position: center;

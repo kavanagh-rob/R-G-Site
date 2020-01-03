@@ -1,0 +1,29 @@
+.day2-section {
+    background-color: #0761bd4d;   
+    padding: 3rem 0;
+    color: darkslategrey;
+    
+  .featured-text {
+    padding: 2rem;
+    @media (min-width: 992px) {
+      padding: 0 0 0 2rem;
+      border-left: 0.5rem solid $primary;
+    }
+  }
+    .text-day2info {
+      color: black !important;
+    }
+  .day2-text {
+    padding: 3rem;
+    font-size: 90%;
+  
+    @media (min-width: 992px) {
+      padding: 5rem;
+      hr {
+        border-color: $primary;
+        border-width: .25rem;
+        width: 30%;
+      }
+    }
+  }
+}
