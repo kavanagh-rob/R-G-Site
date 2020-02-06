@@ -242,6 +242,13 @@
   margin-bottom: 5rem;
 }
 
+.ceremony-section .time-txt {
+  color: blanchedalmond;
+  font-family: serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
 .ceremony-section .church-img {
   background: linear-gradient(to bottom, rgba(238, 72, 218, 0.119608) 0%, rgba(22, 22, 22, 0.1) 75%, #161616 100%), url("../img/church.jpg");
   width: 100%;
@@ -318,6 +325,10 @@
   color: darkslategrey;
 }
 
+.day2-section .h4-text {
+  color: darkseagreen;
+}
+
 .day2-section .featured-text {
   padding: 2rem;
 }
@@ -340,13 +351,29 @@
 
 @media (min-width: 992px) {
   .day2-section .day2-text {
-    padding: 5rem;
+    padding: 2rem;
+    border-right: 0.5rem solid #64a19d;
   }
   .day2-section .day2-text hr {
     border-color: #64a19d;
     border-width: .25rem;
     width: 30%;
   }
+}
+
+.day2-section .day2-bg {
+  background-color: darkred;
+}
+
+@media (max-width: 992px) {
+  .day2-section .d2-text-container {
+    margin-bottom: 15px;
+  }
+}
+
+.day2-section .day2-img {
+  width: 100%;
+  height: 100%;
 }
 
 .rsvp-section {
@@ -1198,6 +1225,20 @@ svg.polaroid rect {
     font-size: 160%;
     line-height: 2;
   }
+}
+
+.accomodation-section .card-title {
+  background-color: "darkslategrey";
+  color: "white";
+}
+
+.accomodation-section .card {
+  height: 100%;
+  border: 2px solid "darkslategrey";
+}
+
+.accomodation-section .note-txt {
+  color: darkred;
 }
 
 .accomodation-section .accomodation-icon {

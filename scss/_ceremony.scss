@@ -10,6 +10,13 @@
     p {
       margin-bottom: 5rem;
     }
+    
+    .time-txt {
+        color: blanchedalmond;
+        font-family: serif;
+        font-style: italic;
+        font-weight: 400;
+    }
 
   .church-img {
     background: linear-gradient(to bottom, #{fade-out(#ee48da38, .1)} 0%,#{fade-out($black, .9)} 75%,#161616 100%), url('../img/church.jpg');

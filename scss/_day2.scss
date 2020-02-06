@@ -2,7 +2,10 @@
     background-color: #0761bd4d;   
     padding: 3rem 0;
     color: darkslategrey;
-    
+
+    .h4-text {
+        color: darkseagreen;
+    }
   .featured-text {
     padding: 2rem;
     @media (min-width: 992px) {
@@ -18,7 +21,8 @@
     font-size: 90%;
   
     @media (min-width: 992px) {
-      padding: 5rem;
+      padding: 2rem;
+      border-right: 0.5rem solid $primary;
       hr {
         border-color: $primary;
         border-width: .25rem;
@@ -26,4 +30,18 @@
       }
     }
   }
+    .day2-bg {
+        background-color: darkred;
+    }
+    
+     @media (max-width: 992px) {
+        .d2-text-container {
+            margin-bottom: 15px;
+        }
+    }
+    
+    .day2-img {
+        width: 100%;
+        height: 100%;
+    }
 }
