@@ -14,6 +14,8 @@
                 alert("Thanks " + smsData.name + " your have been subscribed to SMS updates from Gean & Rob.\n\n" 
                 + " on phone: "+smsData.phoneNumber+"\n"  
                  );
+                 $("#smsSubsciptionForm").modal("hide");
+            
             },
             function smsError(err) {
                 alert(err);
@@ -21,7 +23,6 @@
         );
     }
 })(jQuery); 
-
 
 function sendSMSInfo(smsData, onSuccess, onFailure) {
     var data = {};
