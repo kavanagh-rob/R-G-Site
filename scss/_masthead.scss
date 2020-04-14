@@ -10,6 +10,10 @@
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  .dateText {
+        color: white;
+    }
+    
   .title-text {
     font-family: 'Varela Round';
     font-size: 2.5rem;
@@ -26,6 +30,11 @@
   .mast-button {
     font-size: 60%;
     padding: .5rem 1rem;
+  }
+    
+  #rsvpMastHeadButton {   
+      font-size: 1em;
+      background-color : #970eabc7;
   }
   
   @media(min-width: 400px) {
@@ -83,4 +92,33 @@
       font-size: 3.25rem;
     }
   }
+    
+    .newDate {
+        padding: .75rem;
+        border: 4px solid #333333;
+        font-size: 1.2rem;
+    //    border-radius: 5% 5%;
+    //    background: #ce1bc89e;
+        position: relative;
+         -webkit-animation: BLINK 2.2s infinite; /* Safari 4+ */
+          -moz-animation:   BLINK 2.2s infinite; /* Fx 5+ */
+          -o-animation:     BLINK 2.2s infinite; /* Opera 12+ */
+          animation:        BLINK 2.2s infinite; /* IE 10+, Fx 29+ */
+
+    }
+    
+
+    @-webkit-keyframes BLINK {
+        0%, 49% {
+         background: #18f58f9e;
+         color: white;
+        //        border: 5px solid red;
+        }
+        50%, 100% {
+        //         background: red;
+        }
+    }
+    
+    
+
 }

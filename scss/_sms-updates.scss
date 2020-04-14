@@ -1,0 +1,91 @@
+.sms-section {
+  background: linear-gradient(to bottom, #{fade-out($black, .9)} 0%,#{fade-out($black, .5)} 75%,$black 100%), url('../img/night.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  
+  .container {
+    padding: 5rem 0;
+  }
+  .form-inline {
+    input {
+      box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0,0,0,.1) !important;
+      padding: 1.25rem 2rem;
+      height: auto;
+      font-family: 'Varela Round';
+      font-size: 80%;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      border: 0;
+    }
+  }
+  @media(max-width: 1024px) {
+    padding-top: 2rem; 
+ }
+
+ @media(max-width: 768px) { 
+  padding-top: 1rem; 
+  }
+
+  /* Overlay */
+  .sms-overlay {
+    position: relative
+  }
+  
+  .sms-overlay::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(231, 9, 21, 0.7);
+    left: 0;
+    z-index: 100;
+    -webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+    transition: opacity 0.3s, visibility 0s 0.3s;
+  }
+  
+  .sms-overlay::before {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  
+  
+   .sms-overlay::after {
+    content: 'You have been subscribed to SMS notifications';
+    font-weight: 400;
+    position: absolute;
+    border: 3px solid #fff;
+    text-align: center;
+    white-space: nowrap;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: 101;
+  }
+  
+  .sms-overlay::before,
+  .sms-overlay::after {
+    // opacity: 0;
+    // visibility: hidden;
+    opacity: 1;
+    visibility: visible;
+  
+  }
+  
+  .sms-overlay::before,
+  .sms-overlay:hover::after,
+  .touch .sms-overlay::after  {
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
+
+

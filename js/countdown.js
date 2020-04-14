@@ -1,4 +1,4 @@
-var target_date = new Date('June 05 2020 13:00:00 GMT+0100').getTime();
+var target_date = new Date('October 22 2020 13:00:00 GMT+0100').getTime();
  
 
 var days, hours, minutes, seconds;

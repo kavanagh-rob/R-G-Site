@@ -120,6 +120,10 @@
   background-size: cover;
 }
 
+.masthead .dateText {
+  color: white;
+}
+
 .masthead .title-text {
   font-family: 'Varela Round';
   font-size: 2.5rem;
@@ -138,6 +142,11 @@
 .masthead .mast-button {
   font-size: 60%;
   padding: .5rem 1rem;
+}
+
+.masthead #rsvpMastHeadButton {
+  font-size: 1em;
+  background-color: #970eabc7;
 }
 
 @media (min-width: 400px) {
@@ -198,6 +207,28 @@
   .masthead h2 {
     max-width: 30rem;
     font-size: 3.25rem;
+  }
+}
+
+.masthead .newDate {
+  padding: .75rem;
+  border: 4px solid #333333;
+  font-size: 1.2rem;
+  position: relative;
+  -webkit-animation: BLINK 2.2s infinite;
+  /* Safari 4+ */
+  /* Fx 5+ */
+  /* Opera 12+ */
+  animation: BLINK 2.2s infinite;
+  /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes BLINK {
+  0%, 49% {
+    background: #18f58f9e;
+    color: white;
+  }
+  50%, 100% {
   }
 }
 
@@ -462,6 +493,92 @@
   visibility: visible;
 }
 
+.sms-section {
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/night.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  /* Overlay */
+}
+
+.sms-section .container {
+  padding: 5rem 0;
+}
+
+.sms-section .form-inline input {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem 2rem;
+  height: auto;
+  font-family: 'Varela Round';
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+}
+
+@media (max-width: 1024px) {
+  .sms-section {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sms-section {
+    padding-top: 1rem;
+  }
+}
+
+.sms-section .sms-overlay {
+  position: relative;
+}
+
+.sms-section .sms-overlay::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(231, 9, 21, 0.7);
+  left: 0;
+  z-index: 100;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.sms-section .sms-overlay::before {
+  transition: opacity 0.3s;
+}
+
+.sms-section .sms-overlay::after {
+  content: 'You have been subscribed to SMS notifications';
+  font-weight: 400;
+  position: absolute;
+  border: 3px solid #fff;
+  text-align: center;
+  white-space: nowrap;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 10px 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.sms-section .sms-overlay::before,
+.sms-section .sms-overlay::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sms-section .sms-overlay::before,
+.sms-section .sms-overlay:hover::after,
+.sms-section .touch .sms-overlay::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .contact-section {
   padding: 5rem 0 0;
 }
@@ -617,7 +734,7 @@
 
 .polaroid-gallery {
   margin-top: 3rem;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 
 .polaroid-gallery .polaroid-title-container {

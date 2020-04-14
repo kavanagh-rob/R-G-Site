@@ -16,6 +16,10 @@
     document.getElementById('snapZoneButton').addEventListener( 'click', function() {
         postAnalytics('snapzone');
     });
+    
+     document.getElementById('smsSubscribeButton').addEventListener( 'click', function() {
+        postAnalytics('smsSubscribe');
+    });
 
     
 
